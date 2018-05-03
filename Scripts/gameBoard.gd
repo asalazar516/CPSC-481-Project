@@ -295,7 +295,8 @@ func SnakeMove():
 	#if food is horizontal and at right of player 
 	if playerPos.y == foodPos.y && playerPos.x < foodPos.x:
 		playerSnake.set_dir(Vector2(1.0,0.0))
-		#if food is horizontal and at right of player 
+	
+	#if food is horizontal and at left of player 
 	elif playerPos.y == foodPos.y && playerPos.x > foodPos.x:
 		playerSnake.set_dir(Vector2(-1.0,0.0))
 	
