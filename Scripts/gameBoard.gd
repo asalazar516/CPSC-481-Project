@@ -153,6 +153,7 @@ func _ready():
 	playerSnake = Snake.new()
 	playerSnake.setBoardNode(get_node("."))
 	
+	
 	setup_game()
 	set_process(true)
 	set_fixed_process(true)
@@ -264,6 +265,7 @@ func generate_food():
 	food.set_pos(foodPosition * blockSize)
 	board[foodPosition] = 2
 	
+	#add a function to return position of food. 
 ########################## END OF CREATING SNAKE FOOD ######################
 
 func round_over():
@@ -273,10 +275,33 @@ func round_over():
 	get_tree().set_pause(true)
 
 ################### END OF ROUND ####################################
+#player controls
 
 func SnakeMove():
 	var attemptMove = Vector2(1.0, 1.0) #Attempt snake movement
+	
+	#gets food position
+	var foodPos = food.get_pos()/30 #convert to blocksize
+	var playerPos = playerSnake.pos()
+	
+	#if food is above player
+	if playerPos.y > foodPos.y:
+		playerSnake.set_dir(Vector2(0.0,-1.0)) #go up
+	
+	#if food is below player
+	elif playerPos.y < foodPos.y:
+		playerSnake.set_dir(Vector2(0.0,1.0)) #go up
+	
+	#if food is horizontal and at right of player 
+	if playerPos.y == foodPos.y && playerPos.x < foodPos.x:
+		playerSnake.set_dir(Vector2(1.0,0.0))
+		#if food is horizontal and at right of player 
+	elif playerPos.y == foodPos.y && playerPos.x > foodPos.x:
+		playerSnake.set_dir(Vector2(-1.0,0.0))
+	
+	"""
 	if !snake_moving:
+		
 		if Input.is_action_pressed("ui_up"):
 			attemptMove = Vector2(0.0, -1.0)
 		
@@ -290,7 +315,8 @@ func SnakeMove():
 			attemptMove = Vector2(-1.0, 0.0)
 		
 		snake_moving = playerSnake.set_dir(attemptMove)
-		
+	"""
+
 ############################ END OF SNAKE 1 MOVEMENT ################################
 
 func update_snake_length_text():
