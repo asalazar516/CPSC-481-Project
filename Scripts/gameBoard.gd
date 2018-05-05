@@ -35,6 +35,8 @@ var snake_moving
 var snakeLength_text
 var resultMenu
 
+
+
 class Snake:
 	var Block = preload("res://Scenes/Block.xml")
 	
@@ -108,7 +110,6 @@ class Snake:
 	# move with movement, switch statement can_move: 1 - hit wall or self, 2 - hit food, 0 -  hit empty tile
 	func move():
 		var can_move = check_move(movement)
-		
 		if can_move == 1:
 			_roundOver = true
 		
@@ -132,6 +133,12 @@ class Snake:
 			_blocks.insert(0, tail_block)
 			
 		return can_move
+		
+		
+	func tail_pos():
+		var tail_block = _blocks[_blocks.size()-1]
+		var tail_position = tail_block.get_pos() / blockSize
+		return tail_position
 		
 	# check if the move is avaliable
 	func check_move(dir):
@@ -278,20 +285,24 @@ func round_over():
 #player controls
 
 func SnakeMove():
-	var attemptMove = Vector2(1.0, 1.0) #Attempt snake movement
-	
 	#gets food position
 	var foodPos = food.get_pos()/30 #convert to blocksize
 	var playerPos = playerSnake.pos()
-	
+	#var result = playerSnake.move(), if result == 1
+	var tailPos = playerSnake.tail_pos()
+	var nextPos = playerPos.y
+	var prevPos = playerPos.y - 1
+
 	#if food is above player
 	if playerPos.y > foodPos.y:
-		playerSnake.set_dir(Vector2(0.0,-1.0)) #go up
+		nextPos = playerPos.y - 1 #-1 because up decreases y axis value
+		if nextPos != tailPos.y: #if next head position intercepts tail's x-axis, then it waits
+			playerSnake.set_dir(Vector2(0.0,-1.0)) #go up
 	
 	#if food is below player
 	elif playerPos.y < foodPos.y:
-		playerSnake.set_dir(Vector2(0.0,1.0)) #go up
-	
+		playerSnake.set_dir(Vector2(0.0,1.0)) #go down
+
 	#if food is horizontal and at right of player 
 	if playerPos.y == foodPos.y && playerPos.x < foodPos.x:
 		playerSnake.set_dir(Vector2(1.0,0.0))
@@ -301,6 +312,8 @@ func SnakeMove():
 		playerSnake.set_dir(Vector2(-1.0,0.0))
 	
 	"""
+		var attemptMove = Vector2(1.0, 1.0) #Attempt snake movement
+	
 	if !snake_moving:
 		
 		if Input.is_action_pressed("ui_up"):
