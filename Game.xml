@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="3" version="2.1" version_name="Godot Engine v2.1.stable.official">
+<resource_file type="PackedScene" subresource_count="3" version="2.1" version_name="Godot Engine v2.1.4.stable.official">
 	<ext_resource path="res://Scripts/gameBoard.gd" type="Script" index="0"></ext_resource>
 	<resource type="StyleBoxFlat" path="local://1">
 		<real name="content_margin/left"> -1 </real>
@@ -17,14 +17,14 @@
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "conn_count" </string>
-			<int> 3 </int>
+			<int> 2 </int>
 			<string> "conns" </string>
-			<int_array  len="18"> 				2, 1, 48, 47, 2, 0, 8, 1, 50, 49, 2, 0, 9, 1, 50, 51, 2, 0 </int_array>
+			<int_array  len="12"> 				7, 1, 42, 41, 2, 0, 8, 1, 42, 43, 2, 0 </int_array>
 			<string> "editable_instances" </string>
 			<array  len="0" shared="false">
 			</array>
 			<string> "names" </string>
-			<string_array  len="52">
+			<string_array  len="44">
 				<string> "Node2D" </string>
 				<string> "SnakeBoard" </string>
 				<string> "transform/pos" </string>
@@ -35,12 +35,6 @@
 				<string> "wall_color" </string>
 				<string> "snake_color" </string>
 				<string> "food_coloring" </string>
-				<string> "game_timer" </string>
-				<string> "process_mode" </string>
-				<string> "wait_time" </string>
-				<string> "one_shot" </string>
-				<string> "autostart" </string>
-				<string> "Timer" </string>
 				<string> "HUD" </string>
 				<string> "focus/ignore_mouse" </string>
 				<string> "focus/stop_mouse" </string>
@@ -72,31 +66,27 @@
 				<string> "flat" </string>
 				<string> "Button" </string>
 				<string> "Quit" </string>
-				<string> "_on_game_timer_timeout" </string>
-				<string> "timeout" </string>
 				<string> "_on_Replay_pressed" </string>
 				<string> "pressed" </string>
 				<string> "_on_Quit_pressed" </string>
 			</string_array>
 			<string> "node_count" </string>
-			<int> 10 </int>
+			<int> 9 </int>
 			<string> "node_paths" </string>
 			<array  len="0" shared="false">
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="252"> 				-1, -1, 0, 0, -1, 0, 0, 0, 0, 0, 1, -1, 8, 2, 0, 3, 1, 4, 2, 5, 3, 6, 3, 7, 4, 8, 4, 9, 5, 0, 0, 0, 15, 10, -1, 4, 11, 6, 12, 7, 13, 8, 14, 8, 0, 0, 0, 25, 16, -1, 8, 17, 9, 18, 8, 19, 10, 20, 10, 21, 11, 22, 11, 23, 12, 24, 12, 0, 3, 0, 30, 26, -1, 11, 17, 8, 18, 8, 19, 10, 20, 13, 21, 11, 22, 11, 23, 12, 24, 14, 27, 15, 28, 13, 29, 16, 0, 3, 0, 30, 31, -1, 11, 17, 8, 18, 8, 19, 10, 20, 13, 21, 17, 22, 11, 23, 18, 24, 14, 27, 15, 28, 13, 29, 16, 0, 3, 0, 37, 32, -1, 12, 33, 9, 17, 9, 18, 8, 19, 10, 20, 10, 21, 19, 22, 20, 23, 21, 24, 22, 34, 23, 35, 9, 36, 24, 0, 6, 0, 30, 38, -1, 11, 17, 8, 18, 8, 19, 10, 20, 13, 21, 25, 22, 17, 23, 18, 24, 26, 27, 15, 28, 13, 29, 16, 0, 6, 0, 45, 39, -1, 13, 17, 9, 18, 8, 19, 10, 20, 10, 21, 27, 22, 28, 23, 29, 24, 30, 40, 9, 41, 10, 42, 31, 43, 32, 44, 9, 0, 6, 0, 45, 46, -1, 13, 17, 9, 18, 8, 19, 10, 20, 10, 21, 33, 22, 34, 23, 35, 24, 36, 40, 9, 41, 10, 42, 31, 43, 37, 44, 9, 0 </int_array>
+			<int_array  len="237"> 				-1, -1, 0, 0, -1, 0, 0, 0, 0, 0, 1, -1, 8, 2, 0, 3, 1, 4, 2, 5, 3, 6, 3, 7, 4, 8, 4, 9, 5, 0, 0, 0, 19, 10, -1, 8, 11, 6, 12, 7, 13, 8, 14, 8, 15, 9, 16, 9, 17, 10, 18, 10, 0, 2, 0, 24, 20, -1, 11, 11, 7, 12, 7, 13, 8, 14, 11, 15, 9, 16, 9, 17, 10, 18, 12, 21, 13, 22, 11, 23, 14, 0, 2, 0, 24, 25, -1, 11, 11, 7, 12, 7, 13, 8, 14, 11, 15, 15, 16, 9, 17, 16, 18, 12, 21, 13, 22, 11, 23, 14, 0, 2, 0, 31, 26, -1, 12, 27, 6, 11, 6, 12, 7, 13, 8, 14, 8, 15, 17, 16, 18, 17, 19, 18, 20, 28, 21, 29, 6, 30, 22, 0, 5, 0, 24, 32, -1, 11, 11, 7, 12, 7, 13, 8, 14, 11, 15, 23, 16, 15, 17, 16, 18, 24, 21, 13, 22, 11, 23, 14, 0, 5, 0, 39, 33, -1, 13, 11, 6, 12, 7, 13, 8, 14, 8, 15, 25, 16, 26, 17, 27, 18, 28, 34, 6, 35, 8, 36, 29, 37, 30, 38, 6, 0, 5, 0, 39, 40, -1, 13, 11, 6, 12, 7, 13, 8, 14, 8, 15, 31, 16, 32, 17, 33, 18, 34, 34, 6, 35, 8, 36, 29, 37, 35, 38, 6, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="38" shared="false">
+			<array  len="36" shared="false">
 				<vector2> 80, 80 </vector2>
 				<resource  external="0">  </resource>
 				<real> 0.3 </real>
 				<int> 14 </int>
 				<color> 1, 1, 1, 1 </color>
 				<color> 0.980392, 0, 0, 1 </color>
-				<int> 1 </int>
-				<real> 100 </real>
-				<bool> True </bool>
 				<bool> False </bool>
+				<bool> True </bool>
 				<int> 2 </int>
 				<real> 0 </real>
 				<real> 40 </real>

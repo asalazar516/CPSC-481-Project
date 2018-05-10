@@ -191,7 +191,6 @@ func _process(delta):
 	
 	timer -= delta
 	
-	time_text.set_text(str(int(game_timer.get_time_left())))
 	SnakeMove()
 	
 	if timer < 0:
@@ -262,9 +261,11 @@ func generate_food():
 		for key in board.keys():
 			if board[key] == 0:
 				available.push_back(key)
+		randomize()
 		foodPosition = available[randi() % available.size()]
 		
 	else:
+		randomize()
 		foodPosition = Vector2(randi() % width, randi() % height)
 		while(board[foodPosition] == 1):
 			foodPosition = Vector2(randi() % width, randi() % height)
@@ -344,10 +345,6 @@ func GettingNodes():
 	game_timer = get_node("../game_timer")
 	result_text = get_node("../HUD/resultMenu/resultText")
 	resultMenu = get_node("../HUD/resultMenu")
-
-func _on_game_timer_timeout():
-	Result()
-	round_over()
 
 func Result():
 	resultMenu.show()
