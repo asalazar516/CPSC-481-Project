@@ -17,14 +17,14 @@
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "conn_count" </string>
-			<int> 2 </int>
+			<int> 1 </int>
 			<string> "conns" </string>
-			<int_array  len="12"> 				7, 1, 42, 41, 2, 0, 8, 1, 42, 43, 2, 0 </int_array>
+			<int_array  len="6"> 				6, 1, 41, 40, 2, 0 </int_array>
 			<string> "editable_instances" </string>
 			<array  len="0" shared="false">
 			</array>
 			<string> "names" </string>
-			<string_array  len="44">
+			<string_array  len="42">
 				<string> "Node2D" </string>
 				<string> "SnakeBoard" </string>
 				<string> "transform/pos" </string>
@@ -50,7 +50,6 @@
 				<string> "lines_skipped" </string>
 				<string> "max_lines_visible" </string>
 				<string> "Label" </string>
-				<string> "timeCounter" </string>
 				<string> "resultMenu" </string>
 				<string> "visibility/visible" </string>
 				<string> "custom_styles/panel" </string>
@@ -59,26 +58,25 @@
 				<string> "PopupMenu" </string>
 				<string> "resultText" </string>
 				<string> "Replay" </string>
+				<string> "process/pause_mode" </string>
 				<string> "toggle_mode" </string>
 				<string> "enabled_focus_mode" </string>
 				<string> "shortcut" </string>
 				<string> "text" </string>
 				<string> "flat" </string>
 				<string> "Button" </string>
-				<string> "Quit" </string>
 				<string> "_on_Replay_pressed" </string>
 				<string> "pressed" </string>
-				<string> "_on_Quit_pressed" </string>
 			</string_array>
 			<string> "node_count" </string>
-			<int> 9 </int>
+			<int> 7 </int>
 			<string> "node_paths" </string>
 			<array  len="0" shared="false">
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="237"> 				-1, -1, 0, 0, -1, 0, 0, 0, 0, 0, 1, -1, 8, 2, 0, 3, 1, 4, 2, 5, 3, 6, 3, 7, 4, 8, 4, 9, 5, 0, 0, 0, 19, 10, -1, 8, 11, 6, 12, 7, 13, 8, 14, 8, 15, 9, 16, 9, 17, 10, 18, 10, 0, 2, 0, 24, 20, -1, 11, 11, 7, 12, 7, 13, 8, 14, 11, 15, 9, 16, 9, 17, 10, 18, 12, 21, 13, 22, 11, 23, 14, 0, 2, 0, 24, 25, -1, 11, 11, 7, 12, 7, 13, 8, 14, 11, 15, 15, 16, 9, 17, 16, 18, 12, 21, 13, 22, 11, 23, 14, 0, 2, 0, 31, 26, -1, 12, 27, 6, 11, 6, 12, 7, 13, 8, 14, 8, 15, 17, 16, 18, 17, 19, 18, 20, 28, 21, 29, 6, 30, 22, 0, 5, 0, 24, 32, -1, 11, 11, 7, 12, 7, 13, 8, 14, 11, 15, 23, 16, 15, 17, 16, 18, 24, 21, 13, 22, 11, 23, 14, 0, 5, 0, 39, 33, -1, 13, 11, 6, 12, 7, 13, 8, 14, 8, 15, 25, 16, 26, 17, 27, 18, 28, 34, 6, 35, 8, 36, 29, 37, 30, 38, 6, 0, 5, 0, 39, 40, -1, 13, 11, 6, 12, 7, 13, 8, 14, 8, 15, 31, 16, 32, 17, 33, 18, 34, 34, 6, 35, 8, 36, 29, 37, 35, 38, 6, 0 </int_array>
+			<int_array  len="177"> 				-1, -1, 0, 0, -1, 0, 0, 0, 0, 0, 1, -1, 8, 2, 0, 3, 1, 4, 2, 5, 3, 6, 3, 7, 4, 8, 4, 9, 5, 0, 0, 0, 19, 10, -1, 8, 11, 6, 12, 7, 13, 8, 14, 8, 15, 9, 16, 9, 17, 10, 18, 10, 0, 2, 0, 24, 20, -1, 11, 11, 7, 12, 7, 13, 8, 14, 11, 15, 12, 16, 9, 17, 13, 18, 14, 21, 15, 22, 11, 23, 16, 0, 2, 0, 30, 25, -1, 12, 26, 6, 11, 6, 12, 7, 13, 8, 14, 8, 15, 17, 16, 18, 17, 19, 18, 20, 27, 21, 28, 6, 29, 22, 0, 4, 0, 24, 31, -1, 11, 11, 7, 12, 7, 13, 8, 14, 11, 15, 23, 16, 12, 17, 13, 18, 24, 21, 15, 22, 11, 23, 16, 0, 4, 0, 39, 32, -1, 14, 33, 8, 11, 6, 12, 7, 13, 8, 14, 8, 15, 25, 16, 26, 17, 27, 18, 28, 34, 6, 35, 8, 36, 29, 37, 30, 38, 6, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="36" shared="false">
+			<array  len="31" shared="false">
 				<vector2> 80, 80 </vector2>
 				<resource  external="0">  </resource>
 				<real> 0.3 </real>
@@ -91,11 +89,11 @@
 				<real> 0 </real>
 				<real> 40 </real>
 				<int> 0 </int>
+				<real> 250 </real>
+				<real> 290 </real>
 				<real> 14 </real>
 				<real> 1 </real>
 				<int> -1 </int>
-				<real> 250 </real>
-				<real> 290 </real>
 				<real> -3 </real>
 				<real> -6 </real>
 				<real> 605 </real>
@@ -110,11 +108,6 @@
 				<real> 307 </real>
 				<real> 319 </real>
 				<resource name=""></resource>				<string> "REPLAY" </string>
-				<real> 210 </real>
-				<real> 330 </real>
-				<real> 337 </real>
-				<real> 360 </real>
-				<string> "RETURN TO MENU" </string>
 			</array>
 			<string> "version" </string>
 			<int> 2 </int>

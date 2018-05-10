@@ -27,15 +27,12 @@ var roundOver = false
 var timer										#Update functionality
 var game_timer									#Time Counter
 var food										#food variable
-var time_text									#Display time limit
 var result_text									#Display Game Over
 
 var snake_moving
 
 var snakeLength_text
 var resultMenu
-
-
 
 class Snake:
 	var Block = preload("res://Scenes/Block.xml")
@@ -160,7 +157,6 @@ func _ready():
 	playerSnake = Snake.new()
 	playerSnake.setBoardNode(get_node("."))
 	
-	
 	setup_game()
 	set_process(true)
 	set_fixed_process(true)
@@ -206,8 +202,8 @@ func _process(delta):
 		# Snake hit wall or self
 		if result == 1:
 			round_over()
-			resultMenu.show()
-			result_text.set_text("Game Over")
+			Result()
+			
 		
 		timer = movement_speed
 		snake_moving = false
@@ -332,7 +328,7 @@ func SnakeMove():
 		snake_moving = playerSnake.set_dir(attemptMove)
 	"""
 
-############################ END OF SNAKE 1 MOVEMENT ################################
+############################ END OF SNAKE MOVEMENT ################################
 
 func update_snake_length_text():
 	snakeLength_text.set_text("Snake length: " + str(playerSnake.length()))
@@ -341,19 +337,17 @@ func update_snake_length_text():
 
 func GettingNodes():
 	snakeLength_text = get_node("../HUD/snakeLengthText")
-	time_text = get_node("../HUD/timeCounter")
-	game_timer = get_node("../game_timer")
 	result_text = get_node("../HUD/resultMenu/resultText")
 	resultMenu = get_node("../HUD/resultMenu")
 
 func Result():
 	resultMenu.show()
-	result_text.set_text("Game Over")
+	result_text.set_text("Game Over\nSnake length: " + str(playerSnake.length()))
 
 func _on_Replay_pressed():
 	resultMenu.hide()
 	get_tree().set_pause(false)
-	get_tree().change_scene("res://Game.xml")
+	get_tree().reload_current_scene()
 
 func _on_Quit_pressed():
 	resultMenu.hide()
