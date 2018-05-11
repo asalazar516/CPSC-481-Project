@@ -183,7 +183,7 @@ func _process(delta):
 			setup_game()
 	
 	if Input.is_action_pressed("ui_cancel"):
-		get_tree().change_scene("res://Game.xml")
+		get_tree().reload_current_scene()
 	
 	timer -= delta
 	
