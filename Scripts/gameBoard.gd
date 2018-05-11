@@ -296,9 +296,11 @@ func SnakeMove():
 	#if food is above player
 	if playerPos.y > foodPos.y:
 		nextPos = playerPos.y - 1 #-1 because up decreases y axis value
+		
+		#next code doesnt, entirely solve, when snake hits itself, but temporarily does
 		if nextPos != tailPos.y: #if next head position intercepts tail's x-axis, then it waits
 			playerSnake.set_dir(Vector2(0.0,-1.0)) #go up
-	
+
 	#if food is below player
 	elif playerPos.y < foodPos.y:
 		playerSnake.set_dir(Vector2(0.0,1.0)) #go down
@@ -306,10 +308,11 @@ func SnakeMove():
 	#if food is horizontal and at right of player 
 	if playerPos.y == foodPos.y && playerPos.x < foodPos.x:
 		playerSnake.set_dir(Vector2(1.0,0.0))
-	
+
 	#if food is horizontal and at left of player 
 	elif playerPos.y == foodPos.y && playerPos.x > foodPos.x:
 		playerSnake.set_dir(Vector2(-1.0,0.0))
+	
 	
 	"""
 		var attemptMove = Vector2(1.0, 1.0) #Attempt snake movement
